@@ -1,9 +1,10 @@
 import React from 'react';
-import { Navbar, NavItem, NavDropdown, MenuItem, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
-const Menu = () =>{
-    return (
-     <div className='App tc f3'>
+
+export default function navBar(){
+    return(
+        <div className='App tc f3'>
         <Navbar bg='light' expand='lg'>
           <Navbar.Brand href="#home">REACT COURSE</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,8 +28,5 @@ const Menu = () =>{
           </Navbar.Collapse>
         </Navbar>
       </div>
-    );
+    )
 }
-
-export default Menu;
-
