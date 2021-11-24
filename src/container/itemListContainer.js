@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ListGroupItem, ListGroup, Item } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ItemCount from '../components/ItemCount';
 
 
-export default function itemList(props){
+export default function itemListContainer(props){
     return(
         <div className='App tc f3'>
             <Container>
@@ -18,7 +19,9 @@ export default function itemList(props){
                         <ListGroup.Item>{props.deals}</ListGroup.Item>
                         <ListGroup.Item>{props.departments}</ListGroup.Item>
                     </ListGroup></Col>
-                <Col></Col>
+                <Col>
+                <ItemCount />
+                </Col>
             </Row>
             </Container>
         

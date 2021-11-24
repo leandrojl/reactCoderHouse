@@ -1,6 +1,7 @@
 import React from 'react';
-import NavBar from './components/navBar/navBar';
-import ItemList from './components/itemListContainer/itemListContainer';
+import NavBar from './components/navBar';
+import ItemListContainer from './container/itemListContainer';
+
 
 
 const Menu = () =>{
@@ -8,7 +9,9 @@ const Menu = () =>{
      <div className='App tc f3'>
       <NavBar />
       
-      <ItemList brand="BRANDS" shop="SHOP" deals="DEALS" departments="DEPARTMENTS"/>
+      <ItemListContainer brand="BRANDS" shop="SHOP" deals="DEALS" departments="DEPARTMENTS"/>
+
+      
       </div>
     );
 }

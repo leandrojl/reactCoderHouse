@@ -7,6 +7,7 @@ export default function navBar(){
         <div className='App tc f3'>
         <Navbar bg='light' expand='lg'>
           <Navbar.Brand href="#home">REACT COURSE</Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className='mr-auto'>
