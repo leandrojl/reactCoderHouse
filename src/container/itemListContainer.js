@@ -13,15 +13,28 @@ export default function itemListContainer(props){
             <Row>
                 <Col></Col>
                 <Col>
-                    <ListGroup horizontal>
+                    <ListGroup horizontal className='mt-5'>
                         <ListGroup.Item>{props.shop}</ListGroup.Item>
                         <ListGroup.Item>{props.brand}</ListGroup.Item>
                         <ListGroup.Item>{props.deals}</ListGroup.Item>
                         <ListGroup.Item>{props.departments}</ListGroup.Item>
                     </ListGroup></Col>
                 <Col>
+                
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                 <ItemCount />
                 </Col>
+                <Col>
+                <ItemCount />
+                </Col>
+                <Col>
+                <ItemCount />
+                </Col>
+                
+                
             </Row>
             </Container>
         
