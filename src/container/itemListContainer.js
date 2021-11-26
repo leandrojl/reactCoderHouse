@@ -4,14 +4,17 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ItemCount from '../components/ItemCount';
-
+import ItemList from '../components/ItemList';
 
 export default function itemListContainer(props){
     return(
         <div className='App tc f3'>
             <Container>
+            <ItemList />
             <Row>
-                <Col></Col>
+                <Col>
+                
+                </Col>
                 <Col>
                     <ListGroup horizontal className='mt-5'>
                         <ListGroup.Item>{props.shop}</ListGroup.Item>
