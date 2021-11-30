@@ -9,7 +9,7 @@ const Menu = () =>{
      <div className='App tc f3'>
       <NavBar />
       
-      <ItemListContainer brand="BRANDS" shop="SHOP" deals="DEALS" departments="DEPARTMENTS"/>
+      <ItemListContainer/>
 
       
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import img1 from '../images/shopping-cart.png'
+import img1 from '../assets/images/shopping-cart.png'
 
 export default function cartWidget(){
     return(
