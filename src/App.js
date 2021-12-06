@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './components/navBar';
+import ItemDetailContainer from './container/ItemDetailContainer';
 import ItemListContainer from './container/itemListContainer';
 
 
@@ -10,6 +11,8 @@ const Menu = () =>{
       <NavBar />
       
       <ItemListContainer/>
+      
+      <ItemDetailContainer />
 
       
       </div>

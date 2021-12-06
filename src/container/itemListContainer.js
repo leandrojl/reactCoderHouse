@@ -8,6 +8,7 @@ import ItemList from '../components/ItemList';
 
 export default function ItemListContainer(){
     const [data, setData] = useState([]);
+    
     const getData=()=>{
 
         fetch('data.json'
@@ -28,7 +29,7 @@ export default function ItemListContainer(){
     
           .then(function(response){
     
-            console.log(response)
+            
     
             return response.json();
     
@@ -36,7 +37,7 @@ export default function ItemListContainer(){
     
           .then(function(myJson) {
     
-            console.log(myJson);
+            
             setData(myJson);
     
           });
@@ -59,7 +60,7 @@ useEffect(()=> {
     return(
         <div className='App tc f3'>
             <Container>
-            <ItemList listResult={data} />
+            
             <Row>
                 <Col>
                 
@@ -88,6 +89,11 @@ useEffect(()=> {
                 
                 
             </Row>
+            <Row><Col>
+            <h2 className="col-md-12 text-center mt-5">ITEM LIST CONTAINER</h2>
+            </Col>
+            </Row>
+            <ItemList listResult={data} />
             </Container>
         
       </div>
