@@ -9,50 +9,36 @@ import ItemList from '../components/ItemList';
 export default function ItemListContainer(){
     const [data, setData] = useState([]);
     
-    const getData=()=>{
-
+    const getData=()=>
+    {
         fetch('data.json'
-    
         ,{
     
-          headers : { 
-    
-            'Content-Type': 'application/json',
-    
-            'Accept': 'application/json'
-    
-           }
-    
-        }
-    
-        )
-    
-          .then(function(response){
-    
+            headers : 
             
+            { 
+        
+                'Content-Type': 'application/json',
+        
+                'Accept': 'application/json'
+        
+            }
     
+        }).then(function(response){
+            
             return response.json();
     
-          })
+        }).then(function(myJson) 
+            {
+        
+                setData(myJson);
+        
+            });
     
-          .then(function(myJson) {
-    
-            
-            setData(myJson);
-    
-          });
-    
-      }
-
-
-
+    }
 useEffect(()=> {
+
     setTimeout(getData(),2000);
-    
-    /*
-    fetch('../../public/data.json')
-    .then(response => response.json())
-    .then(postResponse => setPost(postsResponse));*/
 
 },[]); 
 
@@ -60,40 +46,19 @@ useEffect(()=> {
     return(
         <div className='App tc f3'>
             <Container>
-            
+
             <Row>
+
                 <Col>
-                
+
+                    <h2 className="col-md-12 text-center mt-5">ITEM LIST CONTAINER</h2>
+
                 </Col>
-                <Col>
-                    <ListGroup horizontal className='mt-5'>
-                        <ListGroup.Item>SHOP</ListGroup.Item>
-                        <ListGroup.Item>BRANDS</ListGroup.Item>
-                        <ListGroup.Item>DEALS</ListGroup.Item>
-                        <ListGroup.Item>DEPARTMENTS</ListGroup.Item>
-                    </ListGroup></Col>
-                <Col>
-                
-                </Col>
+
             </Row>
-            <Row>
-                <Col>
-                <ItemCount />
-                </Col>
-                <Col>
-                <ItemCount />
-                </Col>
-                <Col>
-                <ItemCount />
-                </Col>
-                
-                
-            </Row>
-            <Row><Col>
-            <h2 className="col-md-12 text-center mt-5">ITEM LIST CONTAINER</h2>
-            </Col>
-            </Row>
-            <ItemList listResult={data} />
+
+                <ItemList listResult={data} />
+
             </Container>
         
       </div>

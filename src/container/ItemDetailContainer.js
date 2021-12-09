@@ -1,66 +1,54 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useParams} from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import ItemDetail from '../components/ItemDetail';
 
+
 export default function ItemDetailContainer() {
-    const [data, setData] = useState([]);
+    {/*const [data, setData] = useState([]);
 
-    const getData=()=>{
+    const {id} = useParams();
 
-        fetch('data.json'
-    
-        ,{
+    const getData=(idSend)=>{
+
+        fetch('data.json',{
     
           headers : { 
     
             'Content-Type': 'application/json',
     
-            'Accept': 'application/json'
-    
-           }
-    
+            'Accept': 'application/json'}
         }
-    
         )
-    
           .then(function(response){
-    
-            
-    
             return response.json();
-    
-          })
-    
-          .then(function(myJson) {
-    
+          }).then(function(myJson) {
             
-            setData(myJson);
-    
-          });
-    
-      }
+            const idItem = myJson.find(item => item.id === parseInt(id));
 
+            setData(idItem);
+
+            console.log(idItem);
+          });
+      }
       useEffect(()=> {
 
-        setTimeout(getData(),2000);
+        setTimeout(getData(id),2000);
     
-    },[]); 
-
+    },[id]);
+*/}
     return (
         <div>
             <Container>
-            <Row>
-            <Col>
-            <h2 className="col-md-12 text-center mt-5">ITEM DETAIL CONTAINER</h2>
-            </Col>
-            
-            </Row>
-            
-            <Row>
-            <ItemDetail dataResult={data} />
-            </Row>
+                <Row>
+                    <Col>
+                        <h2 className="col-md-12 text-center mt-5">ITEM DETAIL CONTAINER</h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <ItemDetail /*dataResult={data}*/ />
+                </Row>
             </Container>
         </div>
     )

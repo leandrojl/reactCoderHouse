@@ -1,31 +1,42 @@
 import React from 'react';
-import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar,  Nav} from 'react-bootstrap';
 import CartWidget from './cartWidget';
+import {useHistory} from 'react-router-dom';
 
-export default function navBar(){
+export default function NavBar(){
+
+    let history = useHistory();
+
     return(
+
         <div className='App tc f3'>
+
         <Navbar bg='light' expand='lg'>
-          <Navbar.Brand href="#home">REACT COURSE</Navbar.Brand>
+
+          <Navbar.Brand onClick={()=> history.push('/HomePage')} href="">REACT COURSE</Navbar.Brand>
           
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
           <Navbar.Collapse id="basic-navbar-nav">
+
             <Nav className='mr-auto'>
-              <Nav.Link href="#home">HOME</Nav.Link>
-              <Nav.Link href="#link">ABOUT</Nav.Link>
-              <Nav.Link href="#link">CONTACT</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              </NavDropdown>
+
+              <Nav.Link onClick={()=> history.push('/HomePage')} href="">HOME</Nav.Link>
+
+              <Nav.Link onClick={()=> history.push('/Products')} href="">PRODUCTS</Nav.Link>
+
+              <Nav.Link onClick={()=> history.push('/AboutUs')} href="">ABOUT</Nav.Link>
+
+              <Nav.Link onClick={()=> history.push('/ContactUs')} href="">CONTACT</Nav.Link>
+              
             </Nav>
             
           </Navbar.Collapse>
+
           <CartWidget/>
+
         </Navbar>
+
       </div>
     )
 }

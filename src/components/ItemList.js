@@ -9,7 +9,7 @@ export default function ItemList({listResult}){
             
             <Row>                
             {
-                listResult.map(data => <Item key={data.id} title={data.name} src={data.src} model={data.model} price={data.price}/>)
+                listResult.map(data => <Item  title={data.name} src={data.src} model={data.model} price={data.price} id={data.id}/>)
             }  
             </Row>
             
